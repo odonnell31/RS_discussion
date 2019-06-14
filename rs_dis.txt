@@ -1,0 +1,23 @@
+Now that we have covered basic techniques for recommender systems, choose one commercial recommender and describe how you think it works (content-based, collaborative filtering, etc). Does the technique deliver a good experience or are the recommendations off-target?
+
+For this post, I will discuss collaborative filtering – specifically, user-based collaborative filtering.
+
+The goal of a user-based collaborative filtering system is to recommend items to a user that are most preferred by similar users. Thus, the foundational understanding of this system is that similar users will like similar/same items.
+
+To implement this system a data scientist must carry out three steps. First, measure the similarity of all users in the system. Second, determine the most similar users in the system with something like k-nearest neighbors. Last, rate the items of similar users and recommend the top-rated items.
+
+This user-based collaborative filtering system can be found in many real-world systems including Spotify’s playlist recommender system. In Spotify’s system, similar users will be recommended playlists that other similar users regularly listen to.
+
+Personally, I think a user-based collaborative system works better in most settings than an item-based system for me because I like variety. In an item-based system I will find less variety because no two items with totally distinct features will both be recommended. But, in a user-based system it just may happen that Spotify listeners who enjoy The Eagles also like Post Malone. Although these two artists are vastly different genres, there may be a link among users!
+
+ 
+
+Read the article below and consider how to handle attacks on recommender systems. Can you think of a similar example where a collective effort to alter the workings of content recommendations have been successful? How would you design a system to prevent this kind of abuse?
+
+ 
+
+This may not be the strongest example, but I was once asked by a friend to go on Amazon and highly rate a product that his friend had listed. I did not know this friend-of-a-friend, nor did I own this product, but the goal was clear: boost the rating of this product with fake reviews to help out this person’s sales. This is a small scale example, but it did make me think about how many fake reviews are on Amazon! Furthermore, nearly every time I purchase a product or service online I’m immediately asked to review it. Thus, reviews are very important to recommender systems and the success of the seller.
+
+To combat the issue of fake reviews there could activity that raises flags in the recommender system. For my fake Amazon review example, maybe Amazon could detect if the threshold of first-time reviewers is too high. This would’ve probably detected my friend-of-a-friend’s product, as many of the reviewers were first-time reviewers. Another idea is to look at reviews in time windows. If too many reviews are submitted within too short a time, that could raise a flag.
+
+Attacks on recommender systems are interesting to think about, as their impacts are potentially catastrophic for a company or individual.
